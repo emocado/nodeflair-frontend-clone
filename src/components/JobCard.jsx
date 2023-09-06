@@ -1,11 +1,14 @@
 const JobCard = () => {
   return (
-    <div>
+    <div className="p-[5px]">
       <div className="cursor-pointer h-full text-base shadow-md transition duration-200 rounded-lg bg-gray-200 outline-3 outline outline-green-500">
         <div className="h-full flex px-5 pt-5 pb-1 min-h-full flex-col bg-white rounded-tl-lg rounded-tr-lg">
-          <div className="flex justify-start justify-items-start flex-nowrap">
+          <div className="flex justify-start justify-items-start flex-wrap min-[440px]:flex-nowrap">
             <img className="w-[45px] h-[45px] rounded-[4px] mr-2.5" src="src/assets/cambridge.png" alt="logo" />
-            <div>
+            <div className="pl-3 min-[440px]:order-3 ml-auto">
+              <span className="text-green-500 text-sm inline-block px-2 py-1 font-semibold rounded-[5px] bg-green-100">Fullstack</span>
+            </div>
+            <div className="max-[440px]:mt-[5px]">
               <p className="mb-0.5 text-sm whitespace-pre-wrap">
                 <span>
                   Cambridge University Press & Assessment
@@ -14,11 +17,8 @@ const JobCard = () => {
               </p>
               <h2 className="font-bold leading-1.5 mb-0 text-ellipsis overflow-hidden">Mid Software Engineer - 3524</h2>
             </div>
-            <div className="pl-3">
-              <span className="text-green-500 text-sm inline-block px-2 py-1 font-semibold rounded-[5px] bg-green-100">Fullstack</span>
-            </div>
           </div>
-          <div className="w-100 pl-[55px]">
+          <div className="w-100 min-[440px]:pl-[55px]">
             <div className="flex gap-2 mb-1.5 text-sm">
               <span className="text-green-500 font-bold">
                 1 minute ago
