@@ -9,7 +9,15 @@ export default {
       "mono": ["Roboto Mono", "Consolas", "monospace"],
       "sans": ["open sans", "helvetica", "arial", "sans-serif"],
     },
-    extend: {},
+    screens: {
+      'sm': '440px',
+    },
+    extend: {
+      colors: {
+        'text-gray': '#838383',
+        'bg-gray': '#f1f1f1',
+      }
+    },
   },
   plugins: [],
 }
