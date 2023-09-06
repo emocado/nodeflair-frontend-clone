@@ -1,6 +1,6 @@
 export const jobTestData = [
   {
-    "logo": "src/assets/cambridge.png",
+    "logo": "cambridge.png",
     "company": "Cambridge University Press & Assessment",
     "title": "Mid Software Engineer - 3524",
     "location": "Philippines",

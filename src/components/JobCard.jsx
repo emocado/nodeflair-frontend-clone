@@ -26,7 +26,7 @@ const JobCard = ({ index, selectedIndex, setSelectedIndex, job }) => {
                 {job.datetime}
               </span>
               <div className="flex justify-center gap-0.5 text-[#838383]">
-                <img src="src/assets/geo-alt-fill.svg" alt="location" />
+                <img src="geo-alt-fill.svg" alt="location" />
                 {job.location}
               </div>
             </div>
