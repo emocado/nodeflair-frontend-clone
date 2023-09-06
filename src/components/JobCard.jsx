@@ -3,7 +3,7 @@ const JobCard = ({ index, selectedIndex, setSelectedIndex, job }) => {
   const selectedGreenOutline = index === selectedIndex ? "outline-3 outline outline-green-500" : ""
   return (
     <div className="p-[5px]">
-      <div onClick={() => setSelectedIndex(index)} className={`cursor-pointer h-full text-base shadow-md transition duration-200 rounded-lg bg-gray-200 hover:translate-y-[-3px] ${selectedGreenOutline}`}>
+      <div onClick={() => setSelectedIndex(index)} className={`cursor-pointer h-full text-base shadow-md transition duration-200 rounded-lg hover:translate-y-[-3px] ${selectedGreenOutline}`}>
         <div className="h-full flex px-5 pt-5 pb-1 min-h-full flex-col bg-white rounded-tl-lg rounded-tr-lg">
           <div className="flex justify-start justify-items-start flex-wrap min-[440px]:flex-nowrap">
             <img className="w-[45px] h-[45px] rounded-[4px] mr-2.5" src={job.logo} alt="logo" />
@@ -15,7 +15,7 @@ const JobCard = ({ index, selectedIndex, setSelectedIndex, job }) => {
                 <span>
                   {job.company}
                 </span>
-                <span className="pl-2">{job.rating} ★</span>
+                {job.rating && <span className="pl-2">{job.rating} ★</span>}
               </p>
               <h2 className="font-bold leading-1.5 mb-0 jobCardTitle text-ellipsis overflow-hidden">{job.title}</h2>
             </div>
@@ -25,7 +25,7 @@ const JobCard = ({ index, selectedIndex, setSelectedIndex, job }) => {
               <span className="text-green-500 font-bold">
                 {job.datetime}
               </span>
-              <div className="flex justify-center gap-0.5 text-gray-500">
+              <div className="flex justify-center gap-0.5 text-[#838383]">
                 <img src="src/assets/geo-alt-fill.svg" alt="location" />
                 {job.location}
               </div>
@@ -33,7 +33,7 @@ const JobCard = ({ index, selectedIndex, setSelectedIndex, job }) => {
             <div>
               <p className="mb-0.5 text-sm font-semibold whitespace-pre-wrap">
                 {job.salary && <span className="pt-1 pr-2">{job.salary}</span>}
-                {job.isEstimate && <span className="py-[3px] px-[7px] font-normal rounded-[5px] bg-gray-200">EST</span>}
+                {job.isEstimate && <span className="py-[3px] px-[7px] font-normal rounded-[5px] bg-[#f1f1f1]">EST</span>}
               </p>
             </div>
           </div>
@@ -41,11 +41,9 @@ const JobCard = ({ index, selectedIndex, setSelectedIndex, job }) => {
         </div>
         <div className="w-full px-4 bottom-0 min-h-[40px] whitespace-nowrap overflow-hidden text-ellipsis bg-white rounded-bl-lg rounded-br-lg">
           {job.skills.map((skill, index) => (
-            <>
-              <span key={index} className="mr-1 inline-block text-ellipsis align-top text-gray-500 text-sm px-2 py-[5px] overflow-hidden max-w-90 max-h-8 font-mono font-bold rounded-[5px] truncate bg-gray-200">
-                {skill}
-              </span>
-            </>
+            <span key={index} className="mr-1 inline-block text-ellipsis align-top text-[#838383] text-sm px-2 py-[5px] overflow-hidden max-w-90 max-h-8 font-mono font-bold rounded-[5px] truncate bg-[#f1f1f1]">
+              {skill}
+            </span>
           ))}
         </div>
       </div>

@@ -5,7 +5,7 @@ export const jobTestData = [
     "title": "Mid Software Engineer - 3524",
     "location": "Philippines",
     "tag": "Fullstack",
-    "rating": 3.9,
+    "rating": null,
     "salary": "₱170,000 - ₱200,000 / mth",
     "isEstimate": true,
     "datetime": "about 1 hour ago",
