@@ -1,13 +1,14 @@
 /* eslint-disable react/prop-types */
-const JobCard = ({ job }) => {
+const JobCard = ({ index, selectedIndex, setSelectedIndex, job }) => {
+  const selectedGreenOutline = index === selectedIndex ? "outline-3 outline outline-green-500" : ""
   return (
     <div className="p-[5px]">
-      <div className="cursor-pointer h-full text-base shadow-md transition duration-200 rounded-lg bg-gray-200 outline-3 outline outline-green-500">
+      <div onClick={() => setSelectedIndex(index)} className={`cursor-pointer h-full text-base shadow-md transition duration-200 rounded-lg bg-gray-200 hover:translate-y-[-3px] ${selectedGreenOutline}`}>
         <div className="h-full flex px-5 pt-5 pb-1 min-h-full flex-col bg-white rounded-tl-lg rounded-tr-lg">
           <div className="flex justify-start justify-items-start flex-wrap min-[440px]:flex-nowrap">
             <img className="w-[45px] h-[45px] rounded-[4px] mr-2.5" src={job.logo} alt="logo" />
             <div className="pl-3 min-[440px]:order-3 ml-auto">
-              <span className="text-green-500 text-sm inline-block px-2 py-1 font-semibold rounded-[5px] bg-green-100">{job.tag}</span>
+              <span className="text-green-500 text-sm inline-block w-max px-2 py-1 font-semibold rounded-[5px] bg-green-100">{job.tag}</span>
             </div>
             <div className="max-[440px]:mt-[5px]">
               <p className="mb-0.5 text-sm whitespace-pre-wrap">
@@ -16,7 +17,7 @@ const JobCard = ({ job }) => {
                 </span>
                 <span className="pl-2">{job.rating} ★</span>
               </p>
-              <h2 className="font-bold leading-1.5 mb-0 text-ellipsis overflow-hidden">{job.title}</h2>
+              <h2 className="font-bold leading-1.5 mb-0 jobCardTitle text-ellipsis overflow-hidden">{job.title}</h2>
             </div>
           </div>
           <div className="w-100 min-[440px]:pl-[55px]">
