@@ -1,14 +1,17 @@
 import JobCard from "./components/JobCard"
 import JobInformation from "./components/JobInformation"
+import { jobTestData } from "./data/job-test-data"
 
 function App() {
-
+  const { title } = jobTestData[0]
   return (
     <div className="flex px-[15px] max-w-[1140px] mx-auto">
       <div className="min-w-[250px] w-[427px] max-[1010px]:flex-grow">
-        <JobCard />
+        {jobTestData.map((job, index) => (
+          <JobCard key={index} job={job} />
+        ))}
       </div>
-      <JobInformation />
+      <JobInformation title={title} />
     </div>
   )
 }
